@@ -1,10 +1,17 @@
 public class Semaforo {
     private int valore;
 
+    /**
+     * @param valore
+     * costruttore semaforo con valore 
+     */
     public Semaforo(int valore) {
         this.valore = valore;
     }
 
+    /**
+     *metodo P del semaforo
+     */
     public synchronized void P(){
         while(valore == 0){
             System.out.println("\n");
@@ -19,6 +26,9 @@ public class Semaforo {
         valore--;
     }
 
+    /**
+     * metodo V semaforo
+     */
     public synchronized void V(){
         notify();
         valore++;
